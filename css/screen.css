@@ -43,16 +43,13 @@
     --color-neutral-xx-dark: #4b4c60;
     --color-neutral-xxx-dark: #35374d;
     --color-neutral-xxxx-dark: #20223a;
-
     /* Shadows */
     --shadow-color: #20223a15;
     --inset-shadow: inset 0 1px 1px var(--shadow-color);
     --focus-shadow-color: #3385FF30;
     --focus-shadow: 0 0 0 3px var(--focus-shadow-color);
-
     /* border radius */
     --radius: 3px;
-
     /* transitions */
     --transition-alpha: .1s ease-in-out;
 }
@@ -78,9 +75,7 @@ html {
     background-color: var(--color-neutral-xxxx-light);
 }
 
-*,
-*:before,
-*:after {
+*, *:before, *:after {
     box-sizing: inherit;
 }
 
@@ -124,9 +119,7 @@ img {
     Default markup for typographic elements
 */
 
-h1,
-h2,
-h3 {
+h1, h2, h3 {
     font-weight: 700;
 }
 
@@ -148,32 +141,22 @@ h3 {
     margin: 0 0 24px;
 }
 
-h4,
-h5,
-h6 {
+h4, h5, h6 {
     font-size: 16px;
     font-weight: 600;
     line-height: 24px;
     margin: 0 0 24px;
 }
 
-p,
-ol,
-ul,
-dl,
-table,
-address,
-figure {
+p, ol, ul, dl, table, address, figure {
     margin: 0 0 24px;
 }
 
-ul,
-ol {
+ul, ol {
     padding-left: 24px;
 }
 
-li ul,
-li ol {
+li ul, li ol {
     margin-bottom: 0;
 }
 
@@ -211,18 +194,15 @@ a {
     outline-offset: 2px;
 }
 
-a:visited,
-a:active {
+a:visited, a:active {
     color: var(--color-alpha);
 }
 
-a:hover,
-a:focus {
+a:hover, a:focus {
     color: var(--color-alpha-light);
 }
 
-label,
-input {
+label, input {
     display: block;
 }
 
@@ -298,7 +278,8 @@ input::placeholder {
 .o-container {
     margin-left: auto;
     margin-right: auto;
-    max-width: 79.5em; /* 79.5 * 16px = 1272 */
+    max-width: 79.5em;
+    /* 79.5 * 16px = 1272 */
     width: 100%;
 }
 
@@ -312,19 +293,18 @@ input::placeholder {
     position: relative;
 }
 
-.o-section + .o-section {
+.o-section+.o-section {
     padding-top: 24px;
 }
 
 @media (min-width: 768px) {
-    .o-section--lg + .o-section--lg,
-    .o-section--xl + .o-section--xl {
+    .o-section--lg+.o-section--lg, .o-section--xl+.o-section--xl {
         padding-top: 48px;
     }
 }
 
 @media (min-width: 992px) {
-    .o-section--xl + .o-section--xl {
+    .o-section--xl+.o-section--xl {
         padding-top: 72px;
     }
 }
@@ -354,7 +334,7 @@ input::placeholder {
     margin: 0 -12px;
 }
 
-.o-layout--gutter > .o-layout__item {
+.o-layout--gutter>.o-layout__item {
     padding: 0 12px;
 }
 
@@ -362,7 +342,7 @@ input::placeholder {
     margin: 0 -6px;
 }
 
-.o-layout--gutter-sm > .o-layout__item {
+.o-layout--gutter-sm>.o-layout__item {
     padding: 0 6px;
 }
 
@@ -370,7 +350,7 @@ input::placeholder {
     margin: 0 -24px;
 }
 
-.o-layout--gutter-lg > .o-layout__item {
+.o-layout--gutter-lg>.o-layout__item {
     padding: 0 24px;
 }
 
@@ -378,7 +358,7 @@ input::placeholder {
     margin: 0 -48px;
 }
 
-.o-layout--gutter-xl > .o-layout__item {
+.o-layout--gutter-xl>.o-layout__item {
     padding: 0 48px;
 }
 
@@ -478,18 +458,14 @@ input::placeholder {
     width: auto;
     overflow: visible;
     background: transparent;
-
     /* inherit font & color from ancestor */
     color: inherit;
     font: inherit;
-
     /* Normalize `line-height`. Cannot be changed from `normal` in Firefox 4+. */
     line-height: normal;
-
     /* Corrects font smoothing for webkit */
     -webkit-font-smoothing: inherit;
     -moz-osx-font-smoothing: inherit;
-
     /* Corrects inability to style clickable `input` types in iOS */
     -webkit-appearance: none;
 }
@@ -561,15 +537,16 @@ input::placeholder {
     background-color: white;
     margin-bottom: 24px;
     border-radius: var(--radius);
-    box-shadow: 0 0 0 1px rgba(0,0,0, 0.05), 0 2px 4px rgba(0,0,0,.075);
+    box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.05), 0 2px 4px rgba(0, 0, 0, .075);
     overflow: hidden;
 }
 
 /* Add padding to child for more flexibility */
-.c-card__body,
-.c-card__footer {
+
+.c-card__body, .c-card__footer {
     padding: 24px 24px 0;
-    overflow: auto; /* Fix margin collapse */
+    overflow: auto;
+    /* Fix margin collapse */
 }
 
 .c-card__footer {
@@ -589,7 +566,6 @@ input::placeholder {
     .c-card__body {
         padding: 48px 48px 24px;
     }
-
     .c-card__title {
         margin-bottom: 48px;
     }
@@ -601,6 +577,22 @@ input::placeholder {
     Everything form related here
 */
 
+.c-label--floating {
+    position: absolute;
+    top: 12px;
+    left: 8px;
+    padding: 4px 8px;
+    will-change: transform;
+    transform: translateY( 0);
+    transition: transform 200ms ease-in-out;
+    box-shadow: 0 0 4px 4px rgba(255, 255, 255, 0.8);
+    background: white;
+}
+
+.c-input:focus+.c-label--floating, .c-input.is-floating+.c-label--floating {
+    transform: translateY( -24px);
+}
+
 .c-form-field--option {
     display: -webkit-flex;
     display: -ms-flex;
@@ -610,7 +602,33 @@ input::placeholder {
 }
 
 .c-form-field--floating-labels {
-	position: relative;
+    position: relative;
+}
+
+.c-password-toggle-container {
+    display: block;
+    position: relative;
+}
+
+.c-password-icon {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    height: 24px;
+    fill: var(--color-neutral-light)
+}
+
+.c-custom-input-option-hidden:focus+.c-password-input-label .c-password-icon {
+    border-color: var(--color-alpha-x-light);
+    box-shadow: var(--focus-shadow);
+}
+
+.c-custom-input-option-hidden:checked+.c-password-input-label .c-password-icon--hide, .c-password-icon--show {
+    display: block;
+}
+
+.c-custom-input-option-hidden:checked+.c-password-input-label .c-password-icon--show, .c-password-icon--hide {
+    display: none;
 }
 
 /*
@@ -641,8 +659,7 @@ input::placeholder {
     border-color: var(--color-neutral-xx-light);
 }
 
-.c-input:focus,
-.c-input:active {
+.c-input:focus, .c-input:active {
     border-color: var(--color-alpha-x-light);
     box-shadow: var(--focus-shadow);
 }
@@ -681,8 +698,6 @@ more padding on the right to avoid overlap
     ---
     Class to put on form buttons or
 */
-
-
 
 /*
     Component: Button
@@ -724,7 +739,6 @@ more padding on the right to avoid overlap
 
 */
 
-
 /*
     Custom option
     ---
@@ -734,8 +748,9 @@ more padding on the right to avoid overlap
 /* Hide the actual input with the class .o-hide-accessible */
 
 /* the label is a separate component */
+
 .c-custom-input-option-label {
-	display: -webkit-flex;
+    display: -webkit-flex;
     display: -ms-flex;
     display: flex;
     -ms-align-items: center;
@@ -744,7 +759,7 @@ more padding on the right to avoid overlap
 }
 
 .c-custom-input-option {
-	display: flex;
+    display: flex;
     -ms-align-items: center;
     align-items: center;
     justify-content: center;
@@ -757,28 +772,29 @@ more padding on the right to avoid overlap
 }
 
 .c-custom-input-option--checkbox {
-	border-radius: var(--radius);
+    border-radius: var(--radius);
 }
 
 .c-custom-input-option--radio {
-	border-radius: 100%;
+    border-radius: 100%;
 }
 
 .c-custom-input-option__symbol {
-	display: block;
-    opacity: 0; /* Hide the svg initially */
+    display: block;
+    opacity: 0;
+    /* Hide the svg initially */
     transform: scale(.5);
     transition: all var(--transition-alpha);
 }
 
 .c-custom-input-option--checkbox .c-custom-input-option__symbol {
-	width: 10px;
+    width: 10px;
     height: 10px;
     fill: var(--color-alpha);
 }
 
 .c-custom-input-option--radio .c-custom-input-option__symbol {
-	background-color: var(--color-alpha);
+    background-color: var(--color-alpha);
     border-radius: 100%;
     width: 6px;
     height: 6px;
@@ -787,20 +803,21 @@ more padding on the right to avoid overlap
 /* hover state */
 
 .c-custom-input-option-label:hover .c-custom-input-option {
-	border-color: var(--color-neutral-xx-light);
+    border-color: var(--color-neutral-xx-light);
 }
 
 /* focused and active state */
 
-.c-custom-input-option-hidden:focus + .c-custom-input-option-label .c-custom-input-option {
-	border: 1px solid var(--color-alpha-x-light);
+.c-custom-input-option-hidden:focus+.c-custom-input-option-label .c-custom-input-option {
+    border: 1px solid var(--color-alpha-x-light);
     box-shadow: var(--focus-shadow);
 }
 
 /* checked state */
 
-.c-custom-input-option-hidden:checked + .c-custom-input-option-label .c-custom-input-option__symbol {
-	opacity: 1; /* Show the svg when the invisible checkbox is checked */
+.c-custom-input-option-hidden:checked+.c-custom-input-option-label .c-custom-input-option__symbol {
+    opacity: 1;
+    /* Show the svg when the invisible checkbox is checked */
     transform: scale(1);
 }
 
@@ -809,7 +826,6 @@ more padding on the right to avoid overlap
 	---
 	Custom checkboxes & radio buttons
 */
-
 
 /*
     Component: Custom Toggle
@@ -825,7 +841,7 @@ more padding on the right to avoid overlap
     margin-bottom: 12px;
 }
 
-.c-toggle-list__item + .c-toggle-list__item {
+.c-toggle-list__item+.c-toggle-list__item {
     padding-top: 12px;
     border-top: 1px solid var(--color-neutral-xxx-light);
 }
@@ -867,7 +883,7 @@ more padding on the right to avoid overlap
     height: 22px;
     width: 22px;
     border-radius: 100%;
-    box-shadow: 0 1px 3px 1px rgba(0,0,0,.2);
+    box-shadow: 0 1px 3px 1px rgba(0, 0, 0, .2);
     background-color: #fff;
     /* background-image: linear-gradient(to bottom, #fff, var(--color-neutral-xxxx-light)); */
     transition: all var(--transition-alpha);
@@ -875,19 +891,18 @@ more padding on the right to avoid overlap
 
 /* focused and active state */
 
-.c-toggle__checkbox-hidden:focus + .c-toggle__label .c-toggle__input,
-.c-toggle__checkbox-hidden:active + .c-toggle__label .c-toggle__input {
+.c-toggle__checkbox-hidden:focus+.c-toggle__label .c-toggle__input, .c-toggle__checkbox-hidden:active+.c-toggle__label .c-toggle__input {
     border-color: var(--color-alpha-x-light);
     box-shadow: var(--focus-shadow);
 }
 
 /* checked state */
 
-.c-toggle__checkbox-hidden:checked + .c-toggle__label .c-toggle__input::after {
-    transform: translate(24px,0);
+.c-toggle__checkbox-hidden:checked+.c-toggle__label .c-toggle__input::after {
+    transform: translate(24px, 0);
 }
 
-.c-toggle__checkbox-hidden:checked + .c-toggle__label .c-toggle__input {
+.c-toggle__checkbox-hidden:checked+.c-toggle__label .c-toggle__input {
     background-color: var(--color-alpha);
     border-color: var(--color-alpha-dark);
 }
@@ -902,38 +917,35 @@ more padding on the right to avoid overlap
 }
 
 .c-toggle__input--alternative::after {
-    transform: translate(-2px,-2px);
+    transform: translate(-2px, -2px);
     border: 1px solid white;
 }
 
 /* focused and active state */
 
-.c-toggle__checkbox-hidden:focus + .c-toggle__label .c-toggle__input--alternative,
-.c-toggle__checkbox-hidden:active + .c-toggle__label .c-toggle__input--alternative {
+.c-toggle__checkbox-hidden:focus+.c-toggle__label .c-toggle__input--alternative, .c-toggle__checkbox-hidden:active+.c-toggle__label .c-toggle__input--alternative {
     border-color: white;
     box-shadow: none;
 }
 
-.c-toggle__checkbox-hidden:focus + .c-toggle__label .c-toggle__input--alternative::after,
-.c-toggle__checkbox-hidden:active + .c-toggle__label .c-toggle__input--alternative::after {
+.c-toggle__checkbox-hidden:focus+.c-toggle__label .c-toggle__input--alternative::after, .c-toggle__checkbox-hidden:active+.c-toggle__label .c-toggle__input--alternative::after {
     border-color: var(--color-alpha-x-light);
-    box-shadow: 0 1px 3px 1px rgba(0,0,0,.2), 0 0 0 3px var(--focus-shadow-color);
+    box-shadow: 0 1px 3px 1px rgba(0, 0, 0, .2), 0 0 0 3px var(--focus-shadow-color);
 }
 
 /* checked state */
 
-.c-toggle__checkbox-hidden:checked + .c-toggle__label .c-toggle__input--alternative::after {
-    transform: translate(18px,-2px);
+.c-toggle__checkbox-hidden:checked+.c-toggle__label .c-toggle__input--alternative::after {
+    transform: translate(18px, -2px);
     background-color: var(--color-alpha);
     border-color: var(--color-alpha);
 }
 
-.c-toggle__checkbox-hidden:focus:checked + .c-toggle__label .c-toggle__input--alternative::after,
-.c-toggle__checkbox-hidden:active:checked + .c-toggle__label .c-toggle__input--alternative::after {
+.c-toggle__checkbox-hidden:focus:checked+.c-toggle__label .c-toggle__input--alternative::after, .c-toggle__checkbox-hidden:active:checked+.c-toggle__label .c-toggle__input--alternative::after {
     border-color: var(--color-alpha-dark);
 }
 
-.c-toggle__checkbox-hidden:checked + .c-toggle__label .c-toggle__input--alternative {
+.c-toggle__checkbox-hidden:checked+.c-toggle__label .c-toggle__input--alternative {
     background-color: var(--color-alpha-xx-light);
     border-color: white;
 }
@@ -945,12 +957,12 @@ more padding on the right to avoid overlap
 */
 
 .c-custom-select {
-	display: block;
+    display: block;
     position: relative;
 }
 
 .c-custom-select__symbol {
-	width: 24px;
+    width: 24px;
     height: 24px;
     position: absolute;
     top: 12px;
@@ -959,12 +971,109 @@ more padding on the right to avoid overlap
     fill: var(--color-neutral-x-light);
 }
 
+/* component: range
+---
+range custom 
+*/
+
+.c-range {
+    display: block;
+    height: 8px;
+    padding: 0;
+    border-radius: 8px;
+    background-color: var(--color-neutral-xxxx-light);
+    border: 1px solid var(--color-neutral-xxx-light);
+}
+
+.c-range::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 18px;
+    height: 18px;
+    border-radius: 8px;
+    background: var(--color-alpha);
+}
+
+.c-range-holder {
+    display: block;
+    width: calc( 100% - 18px)
+}
+
+.c-range-holder::after {
+    content: attr(data-value);
+    display: inline-block;
+    width: 32px;
+    margin-top: 12px;
+    padding: 4px;
+    font-size: .8rem;
+    text-align: center;
+    border-radius: 4px;
+    background: var( --color-neutral-xxxx-light);
+    transform: scale( 0);
+    transition: transform 200ms ease-in-out;
+    transform-origin: center top;
+}
+
+.c-range:focus+.c-range-holder::after {
+    transform: scale(1);
+}
+
 /*
 Component: Password Toggle
 ---
 Password toggle custom checkbox
 */
 
+/* Component: Custom buttons
+    ---
+    custom buttons dropdown
+
+*/
+
+.c-dropdown-container {
+    position: relative;
+}
+
+.c-dropdown-button {
+    display: inline-flex;
+    border: 1px solid var(--color-neutral-x-light);
+    padding: 7px;
+    justify-content: center;
+    align-items: center;
+    line-height: 24px;
+    background-color: var(--color-neutral-xxxx-light);
+    box-shadow: var(--inset-shadow);
+}
+
+.c-dropdown-button:active, .c-dropdown-button:focus {
+    box-shadow: var(--focus-shadow);
+}
+
+.c-button-icon {
+    width: 16px;
+    height: 16px;
+    margin-left: 8px;
+    fill: var(--color-neutral)
+}
+
+.c-button-icon--rotate {
+    transform: rotate(180deg);
+}
+
+.c-dropdown-buttons {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 40px;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 500ms ease-in-out;
+}
+
+.c-dropdown-buttons--visible {
+    opacity: 1;
+    visibility: visible;
+}
 
 /*
 	Component: Custom Like
@@ -972,6 +1081,31 @@ Password toggle custom checkbox
 	Custom like button
 */
 
+.c-like-container {
+    margin-top: 48px;
+}
+
+.c-like__label {
+    height: 24px;
+    width: 24px;
+}
+
+.c-like__icon {
+    fill: var(--color-neutral-x-light);
+    transition: transform 250ms ease-in-out;
+}
+
+.c-like__input:active+.c-like__label .c-like__icon {
+    transform: scale(0.90)
+}
+
+.c-like__input:focus+.c-like__label .c-like__icon {
+    box-shadow: var(--focus-shadow);
+}
+
+.c-like__input:checked+.c-like__label .c-like__icon {
+    fill: #D80027;
+}
 
 /*------------------------------------*\
 #UTILITIES
@@ -1050,7 +1184,6 @@ Password toggle custom checkbox
 .u-max-width-none {
     max-width: none !important;
 }
-
 
 /*
     Utilities: align
@@ -1314,9 +1447,7 @@ No media query since this is the default in mobile first design
 */
 
 @media print {
-    *,
-    *:before,
-    *:after {
+    *, *:before, *:after {
         background: transparent !important;
         color: #000 !important;
         /* Black prints faster:
@@ -1324,8 +1455,7 @@ No media query since this is the default in mobile first design
         box-shadow: none !important;
         text-shadow: none !important;
     }
-    a,
-    a:visited {
+    a, a:visited {
         text-decoration: underline;
     }
     a[href]:after {
@@ -1338,15 +1468,13 @@ No media query since this is the default in mobile first design
     * Don't show links that are fragment identifiers,
     * or use the `javascript:` pseudo protocol
     */
-    a[href^="#"]:after,
-    a[href^="javascript:"]:after {
+    a[href^="#"]:after, a[href^="javascript:"]:after {
         content: "";
     }
     pre {
         white-space: pre-wrap !important;
     }
-    pre,
-    blockquote {
+    pre, blockquote {
         border: 1px solid #999;
         page-break-inside: avoid;
     }
@@ -1357,18 +1485,14 @@ No media query since this is the default in mobile first design
     thead {
         display: table-header-group;
     }
-    tr,
-    img {
+    tr, img {
         page-break-inside: avoid;
     }
-    p,
-    h2,
-    h3 {
+    p, h2, h3 {
         orphans: 3;
         widows: 3;
     }
-    h2,
-    h3 {
+    h2, h3 {
         page-break-after: avoid;
     }
 }
