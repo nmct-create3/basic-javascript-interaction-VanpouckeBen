@@ -47,17 +47,18 @@ function handleQualityRange() {
     //data slider ophalen
     let slider = document.querySelector(".js-quality-input");
 
+    if (slider) {
+        slider.addEventListener("input", function (e) {
+            slider = e.target
+            let holder = slider.nextElementSibling
 
-    slider.addEventListener("input", function (e) {
-        slider = e.target
-        let holder = slider.nextElementSibling
+            holder.setAttribute("data-value", slider.value);
 
-        holder.setAttribute("data-value", slider.value);
-
-        holder.style.transform = "translateX(" + slider.value + "%)";
+            holder.style.transform = "translateX(" + slider.value + "%)";
 
 
-    })
+        })
+    }
 }
 
 
@@ -66,16 +67,17 @@ function handleDropdownButton() {
     let button = document.querySelector(".js-dropdown-headbutton")
 
 
+    if (button) {
+        button.addEventListener("click", function (e) {
+            //toogle container
+            let container = e.target.nextElementSibling;
+            container.classList.toggle("c-dropdown-buttons--visible");
 
-    button.addEventListener("click", function (e) {
-        //toogle container
-        let container = e.target.nextElementSibling;
-        container.classList.toggle("c-dropdown-buttons--visible");
+            //verander icon
+            e.target.firstElementChild.classList.toggle("c-button-icon--rotate")
 
-        //verander icon
-        e.target.firstElementChild.classList.toggle("c-button-icon--rotate")
-
-    });
+        });
+    }
 
 }
     // passwordInput.addEventListener("")
